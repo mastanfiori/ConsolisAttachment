@@ -1,0 +1,38 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns="sap.m"
+	controllerName="com.zmm.commprintout.controller.View1" displayBlock="true">
+	<!--<Shell id="shell">-->
+	<App id="app">
+		<pages>
+			<Page id="page" title="{i18n>title}">
+				<content>
+					<VBox alignItems="Center">
+						<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="{i18n>lbl_selectcategory}" labelSpanXL="6"
+							labelSpanL="6" labelSpanM="6" labelSpanS="6">
+							<f:content>
+								<RadioButtonGroup columns="1" width="100%" class="sapUiMediumMarginBottom" id = "selcat" selectedIndex="{mainModel>/selectedIndex}">
+									<buttons>
+										<RadioButton id="PDC1" text="{i18n>lbl_PDC1}"/>
+										<RadioButton id="PDC2" text="{i18n>lbl_PDC2}"/>
+										<RadioButton id="PDC3" text="{i18n>lbl_PDC3}"/>
+										<RadioButton id="PDC4" text="{i18n>lbl_PDC4}"/>
+										<RadioButton id="PDC5" text="{i18n>lbl_PDC5}"/>
+										<RadioButton id="PDC6" text="{i18n>lbl_PDC6}"/>
+										<RadioButton id="PDC7" text="{i18n>lbl_PDC7}"/>
+										<RadioButton id="PDC8" text="{i18n>lbl_PDC8}"/>
+									</buttons>
+								</RadioButtonGroup>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+				<footer>
+					<OverflowToolbar id="otbFooter">
+						<ToolbarSpacer/>
+						<Button text="{i18n>btn_continue}" type="Emphasized" press="onContinue"/>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+	<!--</Shell>-->
+</mvc:View>

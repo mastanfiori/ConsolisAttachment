@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:vh="sap.ui.comp.valuehelpdialog"
+	xmlns:smartFB="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:fb="sap.ui.comp.filterbar">
+	<Dialog title="{i18n>lbl_PDC5}">
+		<VBox height="100%">
+			<smartFB:SmartFilterBar id="smartFBSchedulingAgreement" persistencyKey="ConsolisPrintOutSchedulingAgreement" considerSelectionVariants="true"
+				entitySet="SchAgrMainResultSet" basicSearchFieldName="Schedulingagreement" showClearOnFB="true" useToolbar="false" defaultSpan="L2 M4 S6">
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Schedulingagreement" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Schedulingagreementforedit" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Approvalstatus" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Supplier" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Purchasingorganizationname" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Validitystartdate" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Validityenddate" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>				
+				<smartFB:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartFB:layoutData>
+			</smartFB:SmartFilterBar>
+			<smartTable:SmartTable id="smartTSchedulingAgrrement" entitySet="SchAgrMainResultSet" smartFilterId="smartFBSchedulingAgreement"
+				tableType="ResponsiveTable"
+				initiallyVisibleFields="Schedulingagreement,Supplier,Purchasingorganizationname,Validitystartdate,Validityenddate,Approvalstatus"
+				enableAutoColumnWidth="true" useExportToExcel="false" useVariantManagement="false" useTablePersonalisation="true"
+				header="{i18n>lbl_scheduling_agreements}" showRowCount="true">
+				<Table mode="SingleSelect"/>
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+		</VBox>
+		<endButton>
+			<Button type="Transparent" text="{i18n>cancel}" press="onCancelValueHelp"/>
+		</endButton>
+		<beginButton>
+			<Button type="Emphasized" text="{i18n>ok}" press="onValueHelpOKSchedulingAgreement"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

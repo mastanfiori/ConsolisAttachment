@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Aggregation.V1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Core.V1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Validation.V1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.UI.v1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AUTHORIZATION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Authorization.V1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Capabilities.V1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.CodeList.v1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Measures.V1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Session.v1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_TIMELINE',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Timeline.v1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='RSODP_CLOUD_DATA_INTEGRATION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.DataIntegration.v1"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZMM_PRINTOUTS_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Header" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Purchasing Doc."/><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Company Code"/><Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Vendor"/></EntityType>
+			<EntityType Name="PurchOrder" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Purchasing Doc."/><Property Name="Bsart" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Document Type"/><Property Name="Aedat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Created on"/><Property Name="Statu" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Status"/><Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Vendor"/></EntityType>
+			<EntityType Name="AutoMail" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Purchasing Doc."/><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Message Type"/><Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Message var."/><NavigationProperty Name="MailContentSet" Relationship="ZMM_PRINTOUTS_SRV.Content" FromRole="FromRole_Content" ToRole="ToRole_Content"/><NavigationProperty Name="AttachmentSet" Relationship="ZMM_PRINTOUTS_SRV.Attachments" FromRole="FromRole_Attachments"
+					ToRole="ToRole_Attachments"/></EntityType>
+			<EntityType Name="Attachment" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Purchasing Doc."/><Property Name="FileId" Type="Edm.String" Nullable="false" MaxLength="70" sap:label="Char 70"/></EntityType>
+			<EntityType Name="MailContent" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Purchasing Doc."/><Property Name="Line" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Text field lngth 255"/></EntityType>
+			<EntityType sap:content-version="1" Name="CCReceivers">
+				<Key><PropertyRef Name="DocType"/><PropertyRef Name="Ebeln"/></Key><Property Name="DocType" sap:label="Undefined range (can be used for patch levels)" MaxLength="4" Nullable="false" Type="Edm.String"/><Property Name="Ebeln" sap:label="Purchasing Doc." MaxLength="10" Nullable="false" Type="Edm.String"/><Property Name="Name" sap:label="Name" MaxLength="80" Nullable="false" Type="Edm.String"/><Property Name="Lifnr" sap:label="Vendor" MaxLength="10" Nullable="false" Type="Edm.String"/><Property Name="Ccreceiver" sap:label="E-Mail Address" MaxLength="241" Nullable="false" Type="Edm.String"/></EntityType>	
+			<EntityType Name="Receivers" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Purchasing Doc."/><Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Vendor"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="75" sap:label="Char75"/><Property Name="Receiver" Type="Edm.String" Nullable="false" MaxLength="241" sap:label="E-Mail Address"/></EntityType>
+			<EntityType Name="Vendor" sap:content-version="1">
+				<Key><PropertyRef Name="Lifnr"/></Key><Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Vendor"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Name"/><Property Name="Name2" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Name 2"/><Property Name="Receiver" Type="Edm.String" Nullable="false" MaxLength="241" sap:label="E-Mail Address"/></EntityType>
+			<Association Name="Content" sap:content-version="1"><End Type="ZMM_PRINTOUTS_SRV.AutoMail" Multiplicity="0..1" Role="FromRole_Content"/><End Type="ZMM_PRINTOUTS_SRV.MailContent" Multiplicity="*" Role="ToRole_Content"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Content"><PropertyRef Name="Ebeln"/></Principal>
+					<Dependent Role="ToRole_Content"><PropertyRef Name="Ebeln"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Receiver" sap:content-version="1"><End Type="ZMM_PRINTOUTS_SRV.AutoMail" Multiplicity="0..1" Role="FromRole_Receiver"/><End Type="ZMM_PRINTOUTS_SRV.Receivers" Multiplicity="*" Role="ToRole_Receiver"/></Association>
+			<Association Name="Attachments" sap:content-version="1"><End Type="ZMM_PRINTOUTS_SRV.AutoMail" Multiplicity="0..1" Role="FromRole_Attachments"/><End Type="ZMM_PRINTOUTS_SRV.Attachment" Multiplicity="*" Role="ToRole_Attachments"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Attachments"><PropertyRef Name="Ebeln"/></Principal>
+					<Dependent Role="ToRole_Attachments"><PropertyRef Name="Ebeln"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZMM_PRINTOUTS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="HeaderSet" EntityType="ZMM_PRINTOUTS_SRV.Header" sap:content-version="1"/><EntitySet Name="PurchOrderSet" EntityType="ZMM_PRINTOUTS_SRV.PurchOrder" sap:content-version="1"/><EntitySet Name="AutoMailSet" EntityType="ZMM_PRINTOUTS_SRV.AutoMail" sap:content-version="1"/><EntitySet Name="AttachmentSet" EntityType="ZMM_PRINTOUTS_SRV.Attachment" sap:content-version="1"/><EntitySet Name="MailContentSet" EntityType="ZMM_PRINTOUTS_SRV.MailContent" sap:content-version="1"/><EntitySet Name="ReceiversSet" EntityType="ZMM_PRINTOUTS_SRV.Receivers" sap:content-version="1"/><EntitySet Name="VendorSet" EntityType="ZMM_PRINTOUTS_SRV.Vendor" sap:content-version="1"/>
+				<AssociationSet Name="ContentSet" Association="ZMM_PRINTOUTS_SRV.Content" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1"><End EntitySet="AutoMailSet" Role="FromRole_Content"/><End EntitySet="MailContentSet" Role="ToRole_Content"/></AssociationSet>
+				<AssociationSet Name="AttachmentsSet" Association="ZMM_PRINTOUTS_SRV.Attachments" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="AutoMailSet" Role="FromRole_Attachments"/><End EntitySet="AttachmentSet" Role="ToRole_Attachments"/></AssociationSet>
+				<AssociationSet Name="Receiver_AssocSet" Association="ZMM_PRINTOUTS_SRV.Receiver" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="AutoMailSet" Role="FromRole_Receiver"/><End EntitySet="ReceiversSet" Role="ToRole_Receiver"/></AssociationSet>
+			</EntityContainer>
+			<Annotations Target="ZMM_PRINTOUTS_SRV.Header/Ebeln" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType"><PropertyValue Property="Label" String=""/><PropertyValue Property="CollectionPath" String="PurchOrderSet"/><PropertyValue Property="CollectionRoot" String=""/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Lifnr"/></Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut"><PropertyValue Property="ValueListProperty" String="Ebeln"/><PropertyValue Property="LocalDataProperty" PropertyPath="Ebeln"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZMM_PRINTOUTS_SRV.Header/Lifnr" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType"><PropertyValue Property="Label" String=""/><PropertyValue Property="CollectionPath" String="VendorSet"/><PropertyValue Property="CollectionRoot" String=""/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Name2"/></Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut"><PropertyValue Property="ValueListProperty" String="Lifnr"/><PropertyValue Property="LocalDataProperty" PropertyPath="Lifnr"/></Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Receiver"/></Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Name1"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZMM_PRINTOUTS_SRV.AutoMail/Ebeln" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType"><PropertyValue Property="Label" String=""/><PropertyValue Property="CollectionPath" String="PurchOrderSet"/><PropertyValue Property="CollectionRoot" String=""/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Lifnr"/></Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut"><PropertyValue Property="ValueListProperty" String="Ebeln"/><PropertyValue Property="LocalDataProperty" PropertyPath="Ebeln"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link rel="self"
+				href="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/sap/ZMM_PRINTOUTS_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-feydg0vx0v.dispatcher.eu2.hana.ondemand.com/destinations/ERP_300/sap/opu/odata/sap/ZMM_PRINTOUTS_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

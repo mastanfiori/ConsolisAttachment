@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:vh="sap.ui.comp.valuehelpdialog"
+	xmlns:smartFB="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:fb="sap.ui.comp.filterbar">
+	<Dialog title="{i18n>lbl_PO}">
+		<VBox height="100%">
+			<!--<SearchField enableSuggestions="true">
+				<SuggestionItem text="{Ebeln}" key="{Ebeln}"/>
+			</SearchField>-->
+			<smartFB:SmartFilterBar id="smartFBPO" persistencyKey="ConsolisPrintOut" considerSelectionVariants="true" entitySet="PurchOrder2Set"
+				basicSearchFieldName="Ebeln" showClearOnFB="true" useToolbar="false" defaultSpan="L2 M4 S6">
+				<smartFB:controlConfiguration showSuggestion="true">
+					<smartFB:ControlConfiguration key="Ebeln" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Bsart" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Aedat" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Statu" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Lifnr" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Name" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Matnr" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Maktx" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartFB:layoutData>
+			</smartFB:SmartFilterBar>
+			<smartTable:SmartTable id="smartTPO" entitySet="PurchOrder2Set" smartFilterId="smartFBPO" tableType="ResponsiveTable"
+				initiallyVisibleFields="Ebeln,Bsart,Aedat,Statu,Lifnr,Name,Matnr,Maktx" useExportToExcel="false" useVariantManagement="false"
+				useTablePersonalisation="true" header="{i18n>lbl_POs}" showRowCount="true">
+				<Table mode="SingleSelect"/>
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+		</VBox>
+		<endButton>
+			<Button type="Transparent" text="{i18n>cancel}" press="onCancelValueHelp"/>
+		</endButton>
+		<beginButton>
+			<Button type="Emphasized" text="{i18n>ok}" press="onValueHelpOKPO"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,154 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:vh="sap.ui.comp.valuehelpdialog"
+	xmlns:smartFB="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:fb="sap.ui.comp.filterbar">
+	<Dialog title="{i18n>lbl_PDC6}">
+		<VBox height="100%">
+			<smartFB:SmartFilterBar id="smartFBSchedulingAgreement" persistencyKey="ConsolisPrintOutSchedulingAgreement"
+				considerSelectionVariants="true" entitySet="SchAgrMainResultSet" basicSearchFieldName="Schedulingagreement" showClearOnFB="true"
+				useToolbar="false" defaultSpan="L2 M4 S6">
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Schedulingagreement" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Schedulingagreementforedit" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Approvalstatus" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Supplier" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Purchasingorganizationname" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Validitystartdate" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Validityenddate" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartFB:layoutData>
+			</smartFB:SmartFilterBar>
+			<smartTable:SmartTable id="smartTSchedulingAgrrement" entitySet="SchAgrMainResultSet" smartFilterId="smartFBSchedulingAgreement"
+				tableType="ResponsiveTable"
+				initiallyVisibleFields="Schedulingagreement,Supplier,Purchasingorganizationname,Validitystartdate,Validityenddate,Approvalstatus"
+				enableAutoColumnWidth="true" useExportToExcel="false" useVariantManagement="false" useTablePersonalisation="true"
+				header="{i18n>lbl_scheduling_agreements_releases}" showRowCount="true">
+				<Table mode="SingleSelect"/>
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+			<VBox visible="{= ${local>/schAgrReleaseDataVisible} === true ? true : false }">
+				<Table headerText="{i18n>JITHeader}" items="{path:'local>/schAgrReleaseData/data'}" mode="SingleSelect" id="SAJITTable">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="{i18n>JITHeader}"/>
+							<ToolbarSpacer/>
+							<Button text="{i18n>removeTableSelectionJIT}" type="Transparent" press = "onRemoveSelection"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column>
+							<Label text="{i18n>SA}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SAItem}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SAReleaseNumber}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SAReleaseDate}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SASchLine}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SASchLineDate}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SASchlineQty}"/>
+						</Column>
+						<Column/>
+					</columns>
+					<ColumnListItem>
+						<cells>
+							<Label text="{local>SA}"/>
+							<Label text="{local>SAItem}"/>
+							<Label text="{local>ReleaseNumber}"/>
+							<Label text="{path:'local>ReleaseDate',type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+							<List items="{local>JIT}">
+								<StandardListItem title="{local>Etenr}"/>
+							</List>
+							<List items="{local>JIT}">
+								<StandardListItem title="{path:'local>Eindt',type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+							</List>
+							<List items="{local>JIT}">
+								<StandardListItem title="{local>Menge}"/>
+							</List>
+							<Link text="{i18n>btn_printpreview}" press="onPrintPreviewSARelease" class="sapUiSmallMarginBeginEnd"/>
+						</cells>
+					</ColumnListItem>
+				</Table>
+				<Table headerText="{i18n>ForecastHeader}" items="{path:'local>/schAgrReleaseData/data'}" mode="SingleSelect" id="SAForecastTable">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="{i18n>ForecastHeader}"/>
+							<ToolbarSpacer/>
+							<Button text="{i18n>removeTableSelectionForecast}" type="Transparent" press = "onRemoveSelection"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column>
+							<Label text="{i18n>SA}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SAItem}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SAReleaseNumber}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SAReleaseDate}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SASchLine}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SASchLineDate}"/>
+						</Column>
+						<Column>
+							<Label text="{i18n>SASchlineQty}"/>
+						</Column>
+						<Column/>
+					</columns>
+					<ColumnListItem>
+						<cells>
+							<Label text="{local>SA}"/>
+							<Label text="{local>SAItem}"/>
+							<Label text="{local>ReleaseNumber}"/>
+							<Label text="{path:'local>ReleaseDate',type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+							<List items="{local>Forecast}">
+								<StandardListItem title="{local>Etenr}"/>
+							</List>
+							<List items="{local>Forecast}">
+								<StandardListItem title="{path:'local>Eindt',type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"/>
+							</List>
+							<List items="{local>Forecast}">
+								<StandardListItem title="{local>Menge}"/>
+							</List>
+							<Link text="{i18n>btn_printpreview}" press="onPrintPreviewSARelease" class="sapUiSmallMarginBeginEnd"/>
+						</cells>
+					</ColumnListItem>
+				</Table>
+			</VBox>
+		</VBox>
+		<buttons>
+			<Button type="Transparent" text="{i18n>ShowHideTables}" press="onShowHideTables"/>
+			<Button type="Transparent" text="{i18n>cancel}" press="onCancelValueHelp"/>
+			<Button type="Emphasized" text="{i18n>ok}" press="onValueHelpOKSchedulingAgreementRelease"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

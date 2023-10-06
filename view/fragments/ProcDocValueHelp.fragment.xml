@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="{/Category}" class="sapUiPopupWithPadding" items="{/docList}" search="handleDocListValueHelpSearch" busy="{/DocListDialogBusy}" 
+		confirm="handleDocListValueHelpClose" cancel="handleDocListValueHelpClose">
+		<StandardListItem  title="{Ebeln}" />
+	</SelectDialog>
+</core:FragmentDefinition>

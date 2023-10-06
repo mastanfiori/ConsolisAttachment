@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:vh="sap.ui.comp.valuehelpdialog"
+	xmlns:smartFB="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:fb="sap.ui.comp.filterbar">
+	<Dialog title="{i18n>lbl_receivers}}">
+		<VBox height="100%">
+			<smartFB:SmartFilterBar id="smartFBEmailSearch" persistencyKey="ConsolisPrintOutEmail" considerSelectionVariants="true"
+				entitySet="VendorSet" basicSearchFieldName="Lifnr" showClearOnFB="true" useToolbar="false"
+				defaultSpan = "L2 M4 S6">
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Lifnr" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Name1" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Name2" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Receiver" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartFB:layoutData>
+			</smartFB:SmartFilterBar>
+			<smartTable:SmartTable id="smartTEmails" entitySet="VendorSet" smartFilterId="smartFBEmailSearch" tableType="ResponsiveTable"
+				initiallyVisibleFields="Lifnr,Name1,Name2,Receiver" useExportToExcel="false" useVariantManagement="false"
+				useTablePersonalisation="true" header="{i18n>lbl_POs}" showRowCount="true">
+				<Table mode = "SingleSelect"/>
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+		</VBox>
+		<endButton>
+			<Button type="Transparent" text="{i18n>cancel}" press = "onCancelValueHelp"/>
+		</endButton>
+		<beginButton>
+				<Button type="Emphasized" text="{i18n>ok}" press = "onValueHelpOKEmailTo"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

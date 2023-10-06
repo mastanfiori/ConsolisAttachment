@@ -1,0 +1,120 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns="sap.m"
+	xmlns:u="sap.ui.unified" xmlns:richtext="sap.ui.richtexteditor" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="com.zmm.commprintout.controller.View2">
+	<Page showNavButton="true" navButtonPress="onNavBack" title="{i18n>title}: {mainModel>/Category} ">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Title text="{i18n>title}"/>
+				</contentMiddle>
+				<contentRight>
+					<Label text="{i18n>language}"/>
+					<Select items="{/SupportedLangsSet}" forceSelection="false" change="onLanguageSelectChange">
+						<core:Item key="{Language}" text="{Sptxt}"/>
+					</Select>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<VBox class="sapUiSmallMargin">
+			<f:SimpleForm id="idSimpleFormHeader" editable="true" layout="ResponsiveGridLayout" title="{i18n>lbl_selectdocument}" labelSpanXL="6"
+				labelSpanL="6" labelSpanM="6" labelSpanS="6">
+				<Label
+					text="{= (${mainModel>/Category} === 'Consignment settlement' || ${mainModel>/Category} === 'Credit Memo') ? ${mainModel>/Category} + ' vendors' : ${mainModel>/Category}}"/>
+				<HBox>
+					<Input value="{mainModel>/selectedPO}" showValueHelp="true" showSuggestion="true" change="getDocDetail" valueHelpRequest="onVHRequest"/>
+					<Link text="{i18n>btn_printpreview}" press="onPrintPreview" class="sapUiSmallMarginBegin"
+						visible="{= ( ${mainModel>/Category} === 'Consignment settlement' || ${mainModel>/Category} === 'Scheduling agreement release' || ${mainModel>/Category} === 'Credit Memo') ? false : true }"/>
+					<Link text="{i18n>btn_accesstodoc}" press="onNavigateToApp" class="sapUiSmallMarginBegin"
+						visible="{= ( ${mainModel>/Category} === 'Consignment settlement' || ${mainModel>/Category} === 'Scheduling agreement release' || ${mainModel>/Category} === 'Credit Memo') ? false : true }"/>
+				</HBox>
+			</f:SimpleForm>
+			<Panel id="receiversPanel" expandable="true" width="auto" class="sapUiResponsiveMargin" headerText="{i18n>lbl_receivers}">
+				<List id="to_rec" items="{mainModel>/receiverList}" mode="Delete" delete="onRemoveToReceiver">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="{i18n>lbl_To_receivers}"/>
+							<ToolbarSpacer/>
+							<Button press="onAddToReceiver" icon="sap-icon://add"/>
+						</Toolbar>
+					</headerToolbar>
+					<InputListItem label="{mainModel>Lifnr} {mainModel>Name}">
+						<Input value="{mainModel>Receiver}" showValueHelp="true" valueHelpRequest="onVHRequestVendorTo"/>
+					</InputListItem>
+				</List>
+				<List id="cc_rec" items="{Users>/}" mode="Delete" delete="onRemoveCCReceiver">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="{i18n>lbl_CC_receivers}"/>
+							<ToolbarSpacer/>
+							<Button press="onAddCCReceiver" icon="sap-icon://add"/>
+						</Toolbar>
+					</headerToolbar>
+					<InputListItem label="{Users>Lifnr} {Users>Name}">
+						<Input id="cc_receiver" value="{Users>Ccreceiver}" change="getCCReceivers" tooltip="Press Enter after adding emails" liveChange="getEnteredCCReceivers" showValueHelp="true" valueHelpRequest="onVHRequestVendorCC"/>
+					</InputListItem>
+				</List>
+			</Panel>
+			<Panel visible="{= ${mainModel>/Category} === 'Scheduling agreement release' ? false : true}" id="attachmentPanel" expandable="true"
+				width="auto" class="sapUiResponsiveMargin" headerText="{i18n>lbl_attachments}">
+				<List id="attachmentList" items="{mainModel>/attachModel}" mode="Delete" delete="onAttachmentDeleted">
+					<headerToolbar>
+						<Toolbar>
+							<ToolbarSpacer/>
+							<u:FileUploader id="mailAttachmentId" tooltip="Click to upload your file" buttonText="Upload" buttonOnly="true" change="onUploadAttachment"
+								multiple="true" style="Emphasized" />
+						</Toolbar>
+					</headerToolbar>
+					<items>
+						<InputListItem>
+							<Input id="attachedFileName" value="{mainModel>Name}"/>
+						</InputListItem>
+					</items>
+				</List>
+				<!--<UploadCollection id="UploadCollection" multiple="true" change="onUploadChange" fileDeleted="onFileDeleted"
+					selectionChange="onSelectionChange" typeMissmatch="onTypeMissmatch" uploadComplete="onUploadComplete"
+					beforeUploadStarts="onBeforeUploadStarts" uploadTerminated="onUploadTerminated" items="{mainModel>/attachModel}"
+					uploadButtonInvisible="{= ( ${mainModel>/Category} === 'PO Confirmation reminder' || ${mainModel>/Category} === 'Consignment settlement' || ${mainModel>/Category} === 'Credit Memo' || ${mainModel>/Category} === 'PO' ) ? false : true }">
+					<items>
+						<UploadCollectionItem documentId="{FileId}" fileName="{FileName}" mimeType="{mimeType}" thumbnailUrl="{thumbnailUrl}" url="{url}"
+							enableEdit="{settings>/enableEdit}" enableDelete="{settings>/enableDelete}" visibleDelete="{settings>/visibleDelete}"
+							visibleEdit="{settings>/visibleEdit}" attributes="{path : 'attributes', templateShareable : false}"
+							statuses="{path : 'statuses', templateShareable : false}" selected="{selected}">
+							<attributes>
+								<ObjectAttribute title="{FileName}" text="{path : 'text', formatter : '.formatAttribute'}" active="{active}" press="onAttributePress"/>
+							</attributes>
+							<statuses>
+								<ObjectStatus title="{FileName}" text="{text}" state="{state}"/>
+							</statuses>
+						</UploadCollectionItem>
+					</items>
+				</UploadCollection>-->
+			</Panel>
+			<!--<Panel visible="{= ${mainModel>/Category} === 'Scheduling agreement release' ? false : true}" id="attachmentPanel2" expandable="true"
+				width="auto" class="sapUiResponsiveMargin" headerText="{i18n>lbl_attachments}">
+				<UploadCollection id="UploadCollection2" multiple="true" fileDeleted="onAttachmentDeleted" items="{mainModel>/attachModel}"
+					noDataDescription="{i18n>leadingText}" noDataText="{i18n>NoData}" change="onUploadChange" uploadComplete="onUploadComplete"
+					uploadButtonInvisible="{= ( ${mainModel>/Category} === 'PO Confirmation reminder' || ${mainModel>/Category} === 'Scheduling agreement' || ${mainModel>/Category} === 'Consignment settlement' || ${mainModel>/Category} === 'Credit Memo' || ${mainModel>/Category} === 'PO' ) ? false : true }">
+					<items>
+						<UploadCollectionItem documentId="{mainModel>Documentnumber}" fileName="{mainModel>Filename}" mimeType="{mainModel>ContentType}"
+							thumbnailUrl="{thumbnailUrl}" url="{url}" enableEdit="false" enableDelete="true" visibleDelete="true" visibleEdit="false"
+							selected="{selected}"></UploadCollectionItem>
+					</items>
+				</UploadCollection>
+			</Panel>-->
+			<Panel id="mailPanel" expandable="true" width="auto" class="sapUiResponsiveMargin" headerText="{i18n>lbl_mailcontext}">
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+					<richtext:RichTextEditor
+						editable="{= (${mainModel>/Category} === 'Consignment settlement' || ${mainModel>/Category} === 'Credit Memo' || ${mainModel>/Category} === 'PO' || ${mainModel>/Category} === 'PO Confirmation reminder') ? true : false }"
+						id="myRTE" width="100%" height="600px" customToolbar="true" showGroupFont="true" showGroupLink="true" showGroupInsert="true"
+						value="{mainModel>/mailContent}" change="onContentChanged"></richtext:RichTextEditor>
+				</l:VerticalLayout>
+			</Panel>
+		</VBox>
+		<footer>
+			<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer/>
+				<Button text="{i18n>btn_sendmail}" type="Emphasized" press="onSendMail"/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

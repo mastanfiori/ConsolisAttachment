@@ -1,0 +1,64 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:vh="sap.ui.comp.valuehelpdialog"
+	xmlns:smartFB="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:fb="sap.ui.comp.filterbar">
+	<Dialog title="{i18n>lbl_PDC2}">
+		<VBox height="100%">
+			<!--<fb:FilterBar>-->
+			<!--	<fb:filterGroupItems>-->
+			<!--		<fb:FilterGroupItem visibleInFilterBar = "true" groupName = "INTERNAL_GROUP" name = "F1">-->
+						
+			<!--		</fb:FilterGroupItem>-->
+			<!--	</fb:filterGroupItems>-->
+			<!--</fb:FilterBar> -->
+			
+			<smartFB:SmartFilterBar id="smartFBPOConfirmation" persistencyKey="ConsolisPrintOutConfirmationPO" considerSelectionVariants="true"
+				entitySet="ConfirmMainResultSet" basicSearchFieldName="Purchasingdocument" showClearOnFB="true" useToolbar="false" defaultSpan="L2 M4 S6">
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Displaycurrency" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Supplierconfirmationcategory" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+					
+					<!--<smartFB:ControlConfiguration key="Supplierconfirmationcategory" visibleInAdvancedArea="true">-->
+					<!--	<smartFB:customControl>-->
+					<!--		<Select items = "{/ConfirmationCatVHSet}" forceSelection = "false" >-->
+					<!--				<core:Item text = "{Supplierconfcategoryname}" key = "{Supplierconfirmationcategory}"/>-->
+					<!--		</Select>-->
+					<!--	</smartFB:customControl>-->
+					<!--</smartFB:ControlConfiguration>-->
+					
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Purchasingdocument" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Supplier" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Purchasingdocumentcategory" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:controlConfiguration>
+					<smartFB:ControlConfiguration key="Material" visibleInAdvancedArea="true"/>
+				</smartFB:controlConfiguration>
+				<smartFB:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartFB:layoutData>
+			</smartFB:SmartFilterBar>
+			<smartTable:SmartTable id="smartTConfirmationPO" entitySet="ConfirmMainResultSet" smartFilterId="smartFBPOConfirmation"
+				tableType="ResponsiveTable"
+				initiallyVisibleFields="Purchasingdocument,Supplier,Displaycurrency,Purchasingdocumentcategory,Supplierconfirmationcategory,Material"
+				enableAutoColumnWidth="true" useExportToExcel="false" useVariantManagement="false" useTablePersonalisation="true"
+				header="{i18n>lbL_poconfirmations}" showRowCount="true">
+				<Table mode="SingleSelect"/>
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+		</VBox>
+		<endButton>
+			<Button type="Transparent" text="{i18n>cancel}" press="onCancelValueHelp"/>
+		</endButton>
+		<beginButton>
+			<Button type="Emphasized" text="{i18n>ok}" press="onValueHelpOKConfirmationPO"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>
